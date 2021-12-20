@@ -55,12 +55,13 @@ def main():
             try:
                 amount = int(input("Enter the amount you would like to purchase >> "))
             except ValueError:
-                print("Please enter a number.\n")
+                print("Please enter a non-decimal number.\n")
                 continue
             total = laptops[select].calc_total_purchase(amount)
             if amount <= 0:
                 print("Purchases cannot be zero or negative.")
                 print("Please enter a positive number.\n")
+                continue
             elif total == "Insufficient Stock":
                 print("Not enough in stock for purchase. Please purchase within stock.\n")
                 continue

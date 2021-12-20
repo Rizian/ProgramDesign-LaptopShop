@@ -29,6 +29,8 @@ class Laptop:
         total_cost = self.__price * amount
         if amount > self.__stock:
             return "Insufficient Stock"
+        elif amount <= 0:
+            pass
         else:
             self.__stock -= amount
         return total_cost
